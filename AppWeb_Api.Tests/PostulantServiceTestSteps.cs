@@ -32,8 +32,8 @@ namespace AppWeb_Api.Tests
             BaseUri = new Uri($"https://localhost:{port}/api/v{version}/postulants");
             Client = _factory.CreateClient(new WebApplicationFactoryClientOptions{BaseAddress = BaseUri});
             
-        }
-
+        } 
+        /*Postulant Create Test*/
         [When(@"A Post Request is sent")]
         public void WhenAPostRequestIsSent(Table savePostResource)
         {
@@ -57,7 +57,7 @@ namespace AppWeb_Api.Tests
             var content = new StringContent(resource.ToJson(), Encoding.UTF8, "application/json");
             Response = Client.PostAsync(BaseUri, content);
         }
-
+        /*Postulant Update Test*/
         [When(@"A Update Request is sent")]
         public void WhenAUpdateRequestIsSent(Table updatePostResource)
         {
